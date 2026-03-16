@@ -1,4 +1,4 @@
-// gcc -o string string.c -fno-stack-protector -no-pie
+// gcc -o string string.c -fno-stack-protector -no-pie -g
 #include <stdio.h>
 #include <stdlib.h>
 
