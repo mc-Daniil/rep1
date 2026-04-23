@@ -1,1 +1,1 @@
-FLAG{function}
+flag{w0W_Func}

