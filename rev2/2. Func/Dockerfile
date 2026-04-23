@@ -21,4 +21,4 @@ EXPOSE 1337
 
 USER ctf
 
-CMD ["socat", "TCP-LISTEN:1337,reuseaddr,fork", "EXEC:/challenge/func,stderr"]
+CMD ["socat", "TCP-LISTEN:1338,reuseaddr,fork", "EXEC:/challenge/func,stderr"]
