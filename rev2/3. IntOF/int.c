@@ -2,8 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <unistd.h>
 
 int main() {
+    setvbuf(stdout, NULL, _IONBF, 0);
+    setvbuf(stdin, NULL, _IONBF, 0);
+    setvbuf(stderr, NULL, _IONBF, 0);
+
+    alarm(60);
+
     int balance = 2147483600;
     int add;
 
@@ -14,7 +21,6 @@ int main() {
     balance += add;
 
     if (balance < 0) {
-        puts("SYSTEM ERROR: integer overflow detected");
         system("cat flag.txt");
     } else {
         printf("Current balance: %d\n", balance);
