@@ -1,1 +1,1 @@
-FLAG{string}
+flag{W0w_Str1ng}

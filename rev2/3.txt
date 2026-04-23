@@ -1,0 +1,1 @@
+set {char[17]} 0x60b040 = "I_WANT_THE_FLAG!"
