@@ -1,6 +1,7 @@
 from pwn import *
 
-p = process('./string')
+# p = process('./string')
+p = remote("rev.danissimurr.ru", 1337)
 p.recvuntil(b'Input:\n')
 p.sendline(b'AAAAcat flag.txt')
 
