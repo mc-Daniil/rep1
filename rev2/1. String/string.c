@@ -11,6 +11,9 @@ struct Data {
 int main(void)
 {
     setvbuf(stdout, NULL, _IONBF, 0);
+    setvbuf(stdin, NULL, _IONBF, 0);
+    setvbuf(stderr, NULL, _IONBF, 0);
+    alarm(60);
     puts("Input:");
     gets(data.name); // небезопасно
     printf("You entered: %s\n", data.command);
