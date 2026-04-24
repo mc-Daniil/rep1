@@ -2,14 +2,12 @@ FROM ubuntu:22.04
 
 RUN apt-get update && apt-get install -y \
     socat \
-    gcc \
     && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -M -d /challenge ctf
 WORKDIR /challenge
 
-COPY stack3.c .
-RUN gcc -o stack3 stack3.c -fno-stack-protector -no-pie
+COPY stack3 .
 
 ENV VSOSH_FLAG="flag{1hird_0weeRfl0W}"
 
