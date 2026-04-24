@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 RUN useradd -M -d /challenge ctf
 WORKDIR /challenge
 
-COPY chal.c .
+COPY stack1.c .
 RUN gcc -o stack1 stack1.c -fno-stack-protector -no-pie
 
 ENV FLAG="flag{W0W_f1rst_overfl0w}"
