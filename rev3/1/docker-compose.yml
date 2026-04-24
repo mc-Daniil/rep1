@@ -1,9 +1,15 @@
-version: '3.8'
-
 services:
-  app:
+  stack1:
     build: .
     ports:
-      - "52:52"
+      - "1340:1340"
     environment:
-      - FLAG=FLAG{stack_overflow_1}
+      - FLAG=flag{W0W_f1rst_overfl0w}
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true

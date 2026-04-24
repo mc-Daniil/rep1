@@ -1,16 +1,23 @@
-# Используем образ Ubuntu
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
-# Устанавливаем необходимые зависимости (если есть)
 RUN apt-get update && apt-get install -y \
-    libc6 \
+    socat \
+    gcc \
     && rm -rf /var/lib/apt/lists/*
 
-# Устанавливаем рабочую директорию
-WORKDIR /app
+RUN useradd -M -d /challenge ctf
+WORKDIR /challenge
 
-# Копируем скомпилированный бинарный файл в контейнер
-COPY main .
+COPY chal.c .
+RUN gcc -o stack1 stack1.c -fno-stack-protector -no-pie
 
-# Указываем команду для запуска
-CMD ["./main"]
+ENV FLAG="flag{W0W_f1rst_overfl0w}"
+
+RUN chown -R root:ctf /challenge && \
+    chmod 750 /challenge/chal
+
+EXPOSE 1340
+
+USER ctf
+
+CMD ["socat", "TCP-LISTEN:1340,reuseaddr,fork", "EXEC:/challenge/stack1,stderr"]
