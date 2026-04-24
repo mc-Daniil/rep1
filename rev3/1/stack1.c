@@ -17,7 +17,7 @@ void func() {
 
 int main() {
   int a = 64;
-  setvbuf(stdin, NULL, _IONBF, 0);  // отключить буферизацию
+  setvbuf(stdin, NULL, _IONBF, 0);
   setvbuf(stdout, NULL, _IONBF, 0);
   func();
 }

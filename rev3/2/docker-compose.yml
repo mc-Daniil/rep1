@@ -1,0 +1,15 @@
+services:
+  stack2:
+    build: .
+    ports:
+      - "1341:1341"
+    environment:
+      - FLAG=flag{W0w_an0ther_owerfl00w}
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
