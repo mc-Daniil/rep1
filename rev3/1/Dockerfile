@@ -14,7 +14,7 @@ RUN gcc -o stack1 stack1.c -fno-stack-protector -no-pie
 ENV FLAG="flag{W0W_f1rst_overfl0w}"
 
 RUN chown -R root:ctf /challenge && \
-    chmod 750 /challenge/chal
+    chmod 750 /challenge/stack1
 
 EXPOSE 1340
 
