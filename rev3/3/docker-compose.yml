@@ -1,0 +1,15 @@
+services:
+  stack3:
+    build: .
+    ports:
+      - "1343:1343"
+    environment:
+      - VSOSH_FLAG=flag{1hird_0weeRfl0W}
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
