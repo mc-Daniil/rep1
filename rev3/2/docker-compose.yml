@@ -4,7 +4,7 @@ services:
     ports:
       - "1341:1341"
     environment:
-      - FLAG=flag{W0w_an0ther_owerfl00w}
+      - FLAG=flag{redacted}
     restart: unless-stopped
     read_only: true
     tmpfs:

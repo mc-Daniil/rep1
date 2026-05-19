@@ -1,0 +1,8 @@
+jump yes_print_flag
+
+x/s 0x61ebce
+
+set {char[17]} 0x60b040 = "I_WANT_THE_FLAG!"
+
+set {int}($rbp - 8) = 0x7a69
+set $eax = 0x7A69

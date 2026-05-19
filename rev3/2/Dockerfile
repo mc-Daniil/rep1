@@ -11,7 +11,7 @@ WORKDIR /challenge
 COPY stack2.c .
 RUN gcc -o stack2 stack2.c -fno-stack-protector -no-pie
 
-ENV FLAG="flag{W0w_an0ther_owerfl00w}"
+ENV FLAG="flag{redacted}"
 
 RUN chown -R root:ctf /challenge && \
     chmod 750 /challenge/stack2
