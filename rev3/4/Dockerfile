@@ -20,4 +20,4 @@ USER ctf
 
 EXPOSE 1344
 
-CMD ["socat", "TCP-LISTEN:1344,reuseaddr,fork", "EXEC:./simple_rop,stderr"]
+CMD ["socat", "TCP-LISTEN:1344,reuseaddr,fork", "EXEC:/home/ctf/simple_rop,pty,raw,echo=0,stderr"]

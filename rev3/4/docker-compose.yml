@@ -5,11 +5,8 @@ services:
       - "1344:1344"
     restart: unless-stopped
     
-    read_only: true
-    
     cap_drop:
       - ALL
-      
     security_opt:
       - no-new-privileges:true
       
