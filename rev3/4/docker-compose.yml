@@ -13,10 +13,9 @@ services:
     security_opt:
       - no-new-privileges:true
       
-    pids_limit: 50
-
     deploy:
       resources:
         limits:
           cpus: '0.5'
           memory: 128M
+          pids: 50
