@@ -20,5 +20,4 @@ USER ctf
 
 EXPOSE 1344
 
-# Добавлен setarch x86_64 -R для запуска бинарника без ASLR
-CMD ["socat", "TCP-LISTEN:1344,reuseaddr,fork", "EXEC:setarch x86_64 -R ./simple_rop,stderr"]
+CMD ["socat", "TCP-LISTEN:1344,reuseaddr,fork", "EXEC:./simple_rop,stderr"]
